@@ -16,7 +16,7 @@ export default function Home() {
           alt=""
           width={300}
           height={376}
-          className="mr-6 mt-2 mb-2 float-left shadow-sm rounded-md"
+          className="mr-6 mt-2 mb-2 md:float-left shadow-sm rounded-md"
         />
         <p className={latoBold.className + ' text-sm pt-2'}>
           When the topic of writing comes up in college and university
