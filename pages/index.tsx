@@ -61,7 +61,7 @@ export default function Home() {
         <br />
         <Link href="https://he.kendallhunt.com/product/catching-unicorns-how-writing-enables-our-imaginations">
           <button
-            className={`bg-blue-500 text-white px-4 py-1 mx-auto rounded-sm block ${latoBold.className}`}
+            className={`bg-blue-500 text-white px-4 py-1 mx-auto text-sm rounded-sm block ${lato.className}`}
           >
             Purchase Catching Unicorns
           </button>
