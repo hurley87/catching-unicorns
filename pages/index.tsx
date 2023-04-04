@@ -75,7 +75,7 @@ export default function Home() {
           alt="bill hurley pic"
           width={200}
           height={250}
-          className="mr-6 md:float-left border-2 border-black shadow-sm rounded-md"
+          className="mr-6 md:float-left rounded-md"
         />
         <p className="pt-4 text-sm">
           Bill Hurley (BSc, MBA, PhD) is a Professor of Applied Mathematics in
