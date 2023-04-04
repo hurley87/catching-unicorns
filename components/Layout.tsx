@@ -67,7 +67,7 @@ const Layout = ({ children, title }: Props) => {
           </ul>
         </div>
         <div className="max-w-4xl px-4 mx-auto">{children}</div>
-        <p className={`pt-20 text-center text-sm ${lato.className} pb-4`}>
+        <p className={`pt-20 text-center text-xs ${lato.className} pb-4`}>
           &#169; 2023 Catch Unicorns | Bill Hurley | william.hurleyrmc@gmail.com
         </p>
       </div>
