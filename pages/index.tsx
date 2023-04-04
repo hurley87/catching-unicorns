@@ -18,7 +18,7 @@ export default function Home() {
           height={376}
           className="mr-6 mt-2 mb-2 float-left shadow-sm rounded-md"
         />
-        <p className={latoBold.className + ' text-sm'}>
+        <p className={latoBold.className + ' text-sm pt-2'}>
           When the topic of writing comes up in college and university
           classrooms, it is generally in the context of “how to do it”
           discussions. But another important question is “why we do it.”
@@ -77,7 +77,7 @@ export default function Home() {
           height={250}
           className="mr-6 md:float-left border-2 border-black shadow-sm rounded-md"
         />
-        <p className="pt-3 text-sm">
+        <p className="pt-4 text-sm">
           Bill Hurley (BSc, MBA, PhD) is a Professor of Applied Mathematics in
           the Department of Mathematics and Computer Science at the Royal
           Military College of Canada. His research interests are in decision
