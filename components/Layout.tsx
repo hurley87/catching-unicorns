@@ -73,9 +73,18 @@ const Layout = ({ children, title }: Props) => {
           </ul>
         </div>
         <div className="max-w-4xl px-4 mx-auto">{children}</div>
-        <p className={`pt-20 text-center text-xs ${lato.className} pb-4`}>
-          &#169; 2023 Catch Unicorns | All Rights Reserved.
-        </p>
+        <div className="pt-20 w-full">
+          <Link href="https://he.kendallhunt.com/product/catching-unicorns-how-writing-enables-our-imaginations">
+            <button
+              className={`bg-blue-500 text-white px-4 py-1 mx-auto text-sm rounded-sm block ${lato.className}`}
+            >
+              Purchase Catching Unicorns
+            </button>
+          </Link>
+          <p className={`pt-10 text-center text-xs ${lato.className} pb-4`}>
+            &#169; 2023 Catch Unicorns | All Rights Reserved.
+          </p>
+        </div>
       </div>
     </div>
   );
