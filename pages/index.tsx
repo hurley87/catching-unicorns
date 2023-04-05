@@ -13,19 +13,21 @@ export default function Home() {
         <Image
           src="/Cover.png"
           alt=""
-          width={300}
-          height={376}
+          width={320}
+          height={380}
           className="mr-6 mt-2 mb-2 md:float-left shadow-sm rounded-md"
         />
-        <p className={latoBold.className + ' text-sm pt-2'}>
+        <p className={'text-sm pt-2'}>
           When the topic of writing comes up in college and university
           classrooms, it is generally in the context of “how to do it”
           discussions. But another important question is “why we do it.”
         </p>
         <p className="pt-3 text-sm">
-          Catching Unicorns: How Writing Enables Our Imaginations provides a
-          full answer to this second question with some important observations
-          on the first.
+          <span className={latoBold.className}>
+            Catching Unicorns: How Writing Enables Our Imaginations
+          </span>{' '}
+          provides a full answer to this second question with some important
+          observations on the first.
         </p>
         <p className="pt-3 text-sm">
           Students spend a lot of time writing. They take lecture notes, they
