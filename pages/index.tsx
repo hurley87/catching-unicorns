@@ -1,7 +1,6 @@
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import { Lato } from 'next/font/google';
-import Link from 'next/link';
 
 const latoBold = Lato({ subsets: ['latin'], weight: '700' });
 const lato = Lato({ subsets: ['latin'], weight: '400' });
