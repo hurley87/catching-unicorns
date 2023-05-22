@@ -3,8 +3,8 @@ import Header from '@/components/Header';
 
 export default function FAQ() {
   return (
-    <Layout title="Catching Unicorns | FAQ">
-      <Header text="FAQ" />
+    <Layout title="Catching Unicorns | Chat">
+      <Header text="Chat" />
     </Layout>
   );
 }

@@ -65,7 +65,7 @@ const Layout = ({ children, title }: Props) => {
               <Link href="/posts">Posts</Link>
             </li>
             <li className="w-full text-center">
-              <Link href="/faq">Faq</Link>
+              <Link href="/chat">Chat</Link>
             </li>
             <li className="w-full text-center">
               <Link href="/contact">Contact</Link>
