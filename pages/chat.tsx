@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 export default function FAQ() {
   return (
     <Layout title="Catching Unicorns | Chat">
-      <Header text="Chat" />
+      <Header text="Ask a Question" />
     </Layout>
   );
 }
