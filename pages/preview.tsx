@@ -91,7 +91,7 @@ export default function FAQ() {
         <Header text="Preview" />
         <div className="pt-4">
           <p className="font-semibold">Consider asking:</p>
-          <p>Does literacy play a big role in our cognitive life?</p>
+          <p>How does literacy play a big role in our cognitive life?</p>
           <p>What does the history of music tell us about innovation?</p>
           <p>When did humans first learn how to write?</p>
         </div>
