@@ -4,6 +4,7 @@ import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import endent from 'endent';
 import { Answer } from '@/components/Answer';
+import Header from '@/components/Header';
 
 export default function FAQ() {
   const [query, setQuery] = useState<string>('');
@@ -84,42 +85,45 @@ export default function FAQ() {
     }
   };
 
-  console.log('TEST');
-  console.log(chunks);
-  console.log(answer);
-  console.log(loading);
-  console.log('');
-
   return (
     <Layout title="Catching Unicorns | Preview">
-      <div className="relative w-full mt-4 pb-72">
-        <IconSearch className="absolute top-3 w-10 left-1 h-6 rounded-full opacity-50 sm:left-3 sm:top-4 sm:h-8" />
+      <>
+        <Header text="Preview" />
+        <div className="pt-4">
+          <p className="font-semibold">Consider asking:</p>
+          <p>Does literacy play a big role in our cognitive life?</p>
+          <p>What does the history of music tell us about innovation?</p>
+          <p>When did humans first learn how to write?</p>
+        </div>
+        <div className="relative w-full mt-4 pb-64">
+          <IconSearch className="absolute top-3 w-10 left-1 h-6 rounded-full opacity-50 sm:left-3 sm:top-4 sm:h-8" />
 
-        <input
-          className="h-12 w-full rounded-full border border-zinc-600 pr-12 pl-11 focus:border-zinc-800 focus:outline-none focus:ring-1 focus:ring-zinc-800 sm:h-16 sm:py-2 sm:pr-16 sm:pl-16 sm:text-lg"
-          type="text"
-          placeholder="Does literacy play a big role in our cognitive life?"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-
-        <button>
-          <IconArrowRight
-            onClick={handleAnswer}
-            className="absolute right-2 top-2.5 h-7 w-7 rounded-full bg-blue-500 p-1 hover:cursor-pointer hover:bg-blue-600 sm:right-3 sm:top-3 sm:h-10 sm:w-10 text-white"
+          <input
+            className="h-12 w-full rounded-full border border-zinc-600 pr-12 pl-11 focus:border-zinc-800 focus:outline-none focus:ring-1 focus:ring-zinc-800 sm:h-16 sm:py-2 sm:pr-16 sm:pl-16 sm:text-lg"
+            type="text"
+            placeholder="Does literacy play a big role in our cognitive life?"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
-        </button>
-        {loading ? (
-          <p className="pt-4">Searching for an answer ...</p>
-        ) : (
-          answer !== '' && (
-            <p className="pt-4">
-              <Answer text={answer} />
-            </p>
-          )
-        )}
-      </div>
+
+          <button>
+            <IconArrowRight
+              onClick={handleAnswer}
+              className="absolute right-2 top-2.5 h-7 w-7 rounded-full bg-blue-500 p-1 hover:cursor-pointer hover:bg-blue-600 sm:right-3 sm:top-3 sm:h-10 sm:w-10 text-white"
+            />
+          </button>
+          {loading ? (
+            <p className="pt-4">Searching for an answer ...</p>
+          ) : (
+            answer !== '' && (
+              <p className="pt-4">
+                <Answer text={answer} />
+              </p>
+            )
+          )}
+        </div>
+      </>
     </Layout>
   );
 }
