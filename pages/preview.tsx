@@ -29,6 +29,8 @@ export default function FAQ() {
 
     setLoading(true);
 
+    console.log(query);
+
     const searchResponse = await fetch('/api/search', {
       method: 'POST',
       headers: {
@@ -47,10 +49,13 @@ export default function FAQ() {
     setChunks(results);
 
     const prompt = endent`
-    Use the following book to provide an answer to the query: "${query}"
-
-    ${results?.map((d: any) => d.content).join('\n\n')}
+    Assuming this: "${results?.map((d: any) => d.content).join('\n\n')}"
+    
+    Answer this question: "${query}"
     `;
+
+    console.log('PROMPT');
+    console.log(prompt);
 
     const answerResponse = await fetch('/api/answer', {
       method: 'POST',
@@ -84,6 +89,8 @@ export default function FAQ() {
       setAnswer((prev) => prev + chunkValue);
     }
   };
+
+  // console.log(chunks);
 
   return (
     <Layout title="Catching Unicorns | Preview">

@@ -27,7 +27,7 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
         {
           role: 'system',
           content:
-            'You are a helpful assistant that accurately answers queries using the Catching Unicorns textbook. Use the text provided to form your answer, but avoid copying word-for-word from the posts. Try to use your own words when possible. Keep your answer under 5 sentences. Be accurate, helpful, concise, and clear.',
+            'You are a helpful financial advisor. Be accurate, helpful, concise, and clear.',
         },
         {
           role: 'user',

@@ -28,12 +28,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     const json = await res.json();
     const embedding = json.data[0].embedding;
+    // console.log('embedding', embedding);
 
     const { data: chunks, error } = await supabaseAdmin.rpc('cu_search', {
       query_embedding: embedding,
       similarity_threshold: 0.01,
-      match_count: matches,
+      match_count: 1,
     });
+
+    console.log('chunks', chunks);
 
     if (error) {
       console.error(error);
