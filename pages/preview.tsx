@@ -89,8 +89,6 @@ export default function FAQ() {
     }
   };
 
-  // console.log(chunks);
-
   return (
     <Layout title="Catching Unicorns | Preview">
       <>
