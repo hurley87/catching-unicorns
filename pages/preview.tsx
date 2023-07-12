@@ -2,7 +2,6 @@ import Layout from '@/components/Layout';
 import { Chunk } from '@/types';
 import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
-import endent from 'endent';
 import { Answer } from '@/components/Answer';
 import Header from '@/components/Header';
 
@@ -48,7 +47,7 @@ export default function FAQ() {
 
     setChunks(results);
 
-    const prompt = endent`
+    const prompt = `
     Assuming this: "${results?.map((d: any) => d.content).join('\n\n')}"
     
     Answer this question: "${query}"
