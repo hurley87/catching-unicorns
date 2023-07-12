@@ -1,8 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
-const fetch = require('node-fetch');
-const AWS = require('aws-sdk');
+import fetch from 'node-fetch';
+import AWS from 'aws-sdk';
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
