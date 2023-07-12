@@ -3,6 +3,8 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { chapters } from '@/scripts/book';
+import { Libre_Baskerville } from 'next/font/google';
+const baskerville = Libre_Baskerville({ subsets: ['latin'], weight: '400' });
 
 const ViewChapterPage: NextPage = () => {
   const [id, setId] = React.useState<string | undefined>();
@@ -20,9 +22,11 @@ const ViewChapterPage: NextPage = () => {
 
   return chapter ? (
     <Layout title={chapter.title}>
-      <h1 className="font-bold text-2xl pt-10">{chapter.title}</h1>
+      <h1 className={`${baskerville.className} text-2xl pt-4`}>
+        {chapter.title}
+      </h1>
       <p className="text-bold text-sm">Chapter {chapter.number}</p>
-      <div className="whitespace-pre-line pt-10">{chapter.text}</div>
+      <div className="whitespace-pre-line pt-4">{chapter.text}</div>
     </Layout>
   ) : (
     <Layout title="Catching Unicorns"></Layout>
