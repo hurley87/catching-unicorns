@@ -4,8 +4,6 @@ export const getTotalSupply =
 import CatchingUnicorns from 0x75e4838661b95c90;
 
 pub fun main(): UInt64 {
-
-    return CatchingUnicorns.totalSupply;
-
+  return CatchingUnicorns.totalSupply;
 }
 `;

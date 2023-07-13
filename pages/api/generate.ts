@@ -23,7 +23,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const prompt = req.body.prompt;
+  const content = req.body.content;
+
+  const completion = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Summarize this content as a visual in less than 10 words:
+    
+    "${content}"`,
+  });
+
+  console.log(completion.data.choices[0].text);
+  const prompt = `a detailed painting called "${completion.data.choices[0].text}" in the style of Marc Chagall`;
+
   const response = await openai.createImage({
     prompt,
     n: 1,
