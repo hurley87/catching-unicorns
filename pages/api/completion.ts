@@ -19,12 +19,14 @@ export default async function handler(
 
   const completion = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `Summarize this content as a visual in less than 10 words:
+    prompt: `Summarize this content as a visual in less than 10 words. Return 3 ideas. Format it as an array of strings:
     
     "${content}"`,
   });
 
   const text = completion.data.choices[0].text as string;
+
+  console.log(text);
 
   res.status(200).json({ text });
 }
