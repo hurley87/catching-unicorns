@@ -11,8 +11,8 @@
     "embed": "tsx scripts/embed.ts"
   },
   "dependencies": {
-    "@onflow/fcl": "^1.4.1",
-    "@onflow/types": "^1.1.0",
+    "@onflow/fcl": "^1.3.3-alpha.0",
+    "@onflow/types": "^1.0.5",
     "@supabase/auth-helpers-nextjs": "^0.7.2",
     "@supabase/supabase-js": "^2.26.0",
     "@tabler/icons-react": "^2.20.0",

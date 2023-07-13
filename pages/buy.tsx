@@ -3,8 +3,8 @@ import { Lato } from 'next/font/google';
 import { create } from 'ipfs-http-client';
 import { use, useEffect, useState } from 'react';
 // import { getIDs } from '@/cadence/scripts/getID_script';
-import * as fcl from '@onflow/fcl';
 import * as types from '@onflow/types';
+import * as fcl from '@onflow/fcl';
 // import type * as types from '@onflow/types';
 import { getTotalSupply } from '@/cadence/scripts/getTotalSupply_script';
 import { getIDs } from '@/cadence/scripts/getID_script';
@@ -47,7 +47,7 @@ export default function Buy() {
   };
 
   const fetchNFTs = async () => {
-    let IDs = [];
+    let IDs: string[] = [];
 
     // Fetch the IDs with our script (no fees or signers necessary)
     try {
@@ -197,14 +197,15 @@ export default function Buy() {
     try {
       const transactionId = await fcl.mutate({
         cadence: `${mintNFT}`,
+        // proposer: fcl.currentUser,
+        // payer: fcl.currentUser,
+
         args: (arg, t) => [
           arg(user.addr, types.Address), //address to which the NFT should be minted
           arg(`Catching Unicorns #${_id.toString()}`, types.String), // Name
           arg(content, types.String), // Description
           arg(path, types.String),
         ],
-        proposer: fcl.currentUser,
-        payer: fcl.currentUser,
         limit: 99,
       });
       console.log('Minting NFT now with transaction ID', transactionId);
