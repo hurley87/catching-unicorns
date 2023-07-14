@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 import { Lato } from 'next/font/google';
 import { create } from 'ipfs-http-client';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { getIDs } from '@/cadence/scripts/getID_script';
 import * as types from '@onflow/types';
 import * as fcl from '@onflow/fcl';

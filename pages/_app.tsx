@@ -4,11 +4,11 @@ import type { AppProps } from 'next/app';
 import * as fcl from '@onflow/fcl';
 
 fcl.config({
-  'flow.network': 'testnet',
+  'flow.network': 'mainnet',
   'app.detail.title': 'Catching Unicorns',
-  'accessNode.api': 'https://rest-testnet.onflow.org',
+  'accessNode.api': 'https://rest-mainnet.onflow.org',
   'app.detail.icon': 'https://www.catchingunicorns.ca/Cover.png',
-  'discovery.wallet': 'https://fcl-discovery.onflow.org/testnet/authn',
+  'discovery.wallet': `https://wallet-v2.blocto.app/${process.env.NEXT_PUBLIC_DAPP_ID}/flow/authn`,
 });
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {

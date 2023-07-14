@@ -1,10 +1,10 @@
 export const mintNFT = `
 // REPLACE THIS WITH YOUR CONTRACT NAME + ADDRESS
-import CatchingUnicorns from 0x75e4838661b95c90 
+import CatchingUnicorns from 0x117abe70f3e72975 
 
 // Do not change these
-import NonFungibleToken from 0x631e88ae7f1d7c20
-import MetadataViews from 0x631e88ae7f1d7c20
+import NonFungibleToken from 0x1d7e57aa55817448
+import MetadataViews from 0x1d7e57aa55817448
 
 transaction(
   recipient: Address,
