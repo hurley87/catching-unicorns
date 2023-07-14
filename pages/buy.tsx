@@ -1,18 +1,13 @@
 import Layout from '@/components/Layout';
-import { Lato } from 'next/font/google';
 import { create } from 'ipfs-http-client';
-import { useEffect, useState } from 'react';
-// import { getIDs } from '@/cadence/scripts/getID_script';
 import * as types from '@onflow/types';
 import * as fcl from '@onflow/fcl';
-// import type * as types from '@onflow/types';
 import { getTotalSupply } from '@/cadence/scripts/getTotalSupply_script';
 import { getIDs } from '@/cadence/scripts/getID_script';
 import { mintNFT } from '@/cadence/transactions/mintNFT_tx';
 import { getMetadata } from '@/cadence/scripts/getMetadata_script';
 import { supabaseAdmin } from '@/utils';
-
-const lato = Lato({ subsets: ['latin'], weight: '400' });
+import { useEffect, useState } from 'react';
 
 export default function Buy() {
   const projectId = process.env.NEXT_PUBLIC_INFRA_PROJECT_ID;
