@@ -35,7 +35,7 @@ export default function FAQ() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query, matches: 1 }),
+      body: JSON.stringify({ query, matches: 2 }),
     });
 
     if (!searchResponse.ok) {
@@ -50,7 +50,7 @@ export default function FAQ() {
     const prompt = `
     Assuming this: "${results?.map((d: any) => d.content).join('\n\n')}"
     
-    Answer this question: "${query}"
+    Answer this question in one sentence: "${query}"
     `;
 
     console.log('PROMPT');
@@ -89,14 +89,17 @@ export default function FAQ() {
     }
   };
 
+  console.log(chunks);
+
   return (
     <Layout title="Catching Unicorns | Preview">
       <>
         <Header text="Preview" />
         <div className="pt-4">
           <p className="font-semibold">Consider asking:</p>
+          <p>How did the Wright brothers use writing to achieve flight?</p>
           <p>How does literacy play a big role in our cognitive life?</p>
-          <p>What does the history of music tell us about innovation?</p>
+          <p>Where does Gord Sinclair get his ideas for songs?</p>
           <p>When did humans first learn how to write?</p>
         </div>
         <div className="relative w-full mt-4 pb-64">
@@ -126,6 +129,14 @@ export default function FAQ() {
               </p>
             )
           )}
+          <div>
+            {chunks.map((chunk, index) => (
+              <div key={index} className="pt-4">
+                <h2>{chunk.title}</h2>
+                <p>{chunk.content}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </>
     </Layout>

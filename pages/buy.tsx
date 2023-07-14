@@ -21,6 +21,8 @@ export default function Buy() {
   const [chunk, setChunk] = useState<any>();
   const [user, setUser] = useState<any>();
   const [NFTs, setNFTs] = useState<any[]>([]);
+  const [totalSupply, setTotalSupply] = useState<string>('0');
+  const [title, setTitle] = useState<string>('');
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -34,7 +36,19 @@ export default function Buy() {
       else setChunk(chunk);
     };
 
+    const fetchTotalSupply = async () => {
+      try {
+        const _totalSupply = await fcl.query({
+          cadence: `${getTotalSupply}`,
+        });
+        setTotalSupply(_totalSupply);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
     fetchTodos();
+    fetchTotalSupply();
   }, [supabaseAdmin]);
 
   const getFromIPFS = async (cid: string) => {
@@ -151,16 +165,8 @@ export default function Buy() {
 
   const handleMint = async () => {
     console.log('Minting');
-    let _totalSupply;
-    try {
-      _totalSupply = await fcl.query({
-        cadence: `${getTotalSupply}`,
-      });
-    } catch (err) {
-      console.log(err);
-    }
 
-    const _id = parseInt(_totalSupply) + 1;
+    const _id = parseInt(totalSupply) + 1;
 
     const { data: chunk, error } = await supabaseAdmin
       .from('cu')
@@ -227,8 +233,10 @@ export default function Buy() {
   return (
     <Layout title="Catching Unicorns | Author">
       <div className="mx-w-sm"></div>
+
       {user && user.addr ? (
         <div>
+          <h1>{totalSupply}</h1>
           <button onClick={handleMint}>Generate Image</button>
           {/* grid of 4 */}
           <div className="grid grid-cols-4 gap-4">
@@ -241,6 +249,8 @@ export default function Buy() {
               );
             })}
           </div>
+          <div>Title</div>
+          <input onChange={(e) => setTitle(e.target.value)} value={title} />
         </div>
       ) : (
         <RenderLogin />

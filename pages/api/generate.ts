@@ -23,15 +23,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const completion = req.body.completion;
+  const title = req.body.title;
 
-  const prompt = `a detailed painting called "${completion}" in the style of Marc Chagall`;
+  const prompt = `a detailed painting called "${title}" in the style of Marc Chagall`;
 
   const response = await openai.createImage({
     prompt,
-    n: 1,
+    n: 3,
     size: '512x512',
   });
+
+  console.log(response.data);
 
   const url: string = response.data.data[0].url as string;
   const imageResponse = await fetch(url);

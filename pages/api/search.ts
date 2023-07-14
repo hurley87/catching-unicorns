@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const { data: chunks, error } = await supabaseAdmin.rpc('cu_search', {
       query_embedding: embedding,
-      similarity_threshold: 0.01,
+      similarity_threshold: 0.05,
       match_count: 1,
     });
 
